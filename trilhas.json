@@ -1,0 +1,242 @@
+{
+  "trilhas": [
+    {
+      "id": "javascript",
+      "nome": "JavaScript",
+      "descricao": "Domine a linguagem mais usada na web, do básico ao avançado.",
+      "niveis": ["iniciante", "intermediario", "avancado"],
+      "modulos": {
+        "iniciante": [
+          { "ordem": 1, "titulo": "Introdução ao JavaScript", "descricao": "Variáveis, tipos de dados e operadores" },
+          { "ordem": 2, "titulo": "Estruturas de Controle", "descricao": "if/else, switch, loops (for, while)" },
+          { "ordem": 3, "titulo": "Funções", "descricao": "Declaração, expressão, arrow functions" },
+          { "ordem": 4, "titulo": "Arrays e Objetos", "descricao": "Manipulação de coleções de dados" },
+          { "ordem": 5, "titulo": "DOM e Eventos", "descricao": "Interação com HTML via JavaScript" }
+        ],
+        "intermediario": [
+          { "ordem": 1, "titulo": "ES6+", "descricao": "Desestruturação, spread/rest, template literals" },
+          { "ordem": 2, "titulo": "Assincronismo", "descricao": "Callbacks, Promises e async/await" },
+          { "ordem": 3, "titulo": "Módulos", "descricao": "import/export, CommonJS vs ESModules" },
+          { "ordem": 4, "titulo": "Manipulação de APIs", "descricao": "Fetch API e consumo de REST APIs" },
+          { "ordem": 5, "titulo": "Classes e POO", "descricao": "Paradigma orientado a objetos em JS" }
+        ],
+        "avancado": [
+          { "ordem": 1, "titulo": "Design Patterns", "descricao": "Padrões de projeto aplicados em JS" },
+          { "ordem": 2, "titulo": "Performance e Otimização", "descricao": "Event loop, memoização, lazy loading" },
+          { "ordem": 3, "titulo": "Testes Automatizados", "descricao": "Jest, TDD e boas práticas de teste" },
+          { "ordem": 4, "titulo": "TypeScript", "descricao": "Tipagem estática e migração de projetos" },
+          { "ordem": 5, "titulo": "Node.js Avançado", "descricao": "Streams, clusters e microserviços" }
+        ]
+      },
+      "desafios": {
+        "iniciante": [
+          {
+            "titulo": "Calculadora Simples",
+            "descricao": "Crie uma função que receba dois números e um operador (+, -, *, /) e retorne o resultado.",
+            "exemplo": "calcular(10, 2, '*') // => 20",
+            "dica": "Use um switch para tratar cada operador."
+          },
+          {
+            "titulo": "Inversor de String",
+            "descricao": "Escreva uma função que inverta uma string sem usar o método .reverse().",
+            "exemplo": "inverter('hello') // => 'olleh'",
+            "dica": "Percorra a string de trás para frente com um loop."
+          }
+        ],
+        "intermediario": [
+          {
+            "titulo": "Busca em API",
+            "descricao": "Consuma a API pública https://api.github.com/users/{username} e exiba nome, bio e número de repositórios.",
+            "exemplo": "buscarUsuario('octocat') // exibe dados do perfil",
+            "dica": "Use fetch com async/await e trate possíveis erros com try/catch."
+          },
+          {
+            "titulo": "Debounce",
+            "descricao": "Implemente uma função debounce que atrasa a execução de outra função por N milissegundos.",
+            "exemplo": "const fn = debounce(() => console.log('ok'), 300)",
+            "dica": "Use setTimeout e clearTimeout."
+          }
+        ],
+        "avancado": [
+          {
+            "titulo": "Event Emitter",
+            "descricao": "Implemente sua própria classe EventEmitter com os métodos on, off e emit.",
+            "exemplo": "emitter.on('click', handler); emitter.emit('click', data)",
+            "dica": "Use um objeto Map para armazenar os listeners por evento."
+          },
+          {
+            "titulo": "Pipeline Funcional",
+            "descricao": "Crie uma função pipe que compose N funções da esquerda para a direita.",
+            "exemplo": "pipe(dobrar, somar1, quadrado)(3) // => 49",
+            "dica": "Use Array.prototype.reduce para encadear as funções."
+          }
+        ]
+      }
+    },
+    {
+      "id": "python",
+      "nome": "Python",
+      "descricao": "Aprenda Python para automação, análise de dados e inteligência artificial.",
+      "niveis": ["iniciante", "intermediario", "avancado"],
+      "modulos": {
+        "iniciante": [
+          { "ordem": 1, "titulo": "Introdução ao Python", "descricao": "Sintaxe, variáveis e tipos de dados" },
+          { "ordem": 2, "titulo": "Estruturas de Controle", "descricao": "if/elif/else, for, while" },
+          { "ordem": 3, "titulo": "Funções e Escopo", "descricao": "def, parâmetros, retorno e closures" },
+          { "ordem": 4, "titulo": "Listas, Tuplas e Dicionários", "descricao": "Estruturas de dados nativas" },
+          { "ordem": 5, "titulo": "Arquivos e Exceções", "descricao": "Leitura/escrita de arquivos e try/except" }
+        ],
+        "intermediario": [
+          { "ordem": 1, "titulo": "POO em Python", "descricao": "Classes, herança, polimorfismo" },
+          { "ordem": 2, "titulo": "Módulos e Pacotes", "descricao": "import, pip e criação de módulos" },
+          { "ordem": 3, "titulo": "Comprehensions", "descricao": "List, dict e set comprehensions" },
+          { "ordem": 4, "titulo": "Geradores e Iteradores", "descricao": "yield, iter() e lazy evaluation" },
+          { "ordem": 5, "titulo": "Expressões Regulares", "descricao": "Módulo re e padrões de busca" }
+        ],
+        "avancado": [
+          { "ordem": 1, "titulo": "Decoradores", "descricao": "Funções de ordem superior e metaprogramação" },
+          { "ordem": 2, "titulo": "Asyncio", "descricao": "Programação assíncrona com async/await" },
+          { "ordem": 3, "titulo": "Pandas e NumPy", "descricao": "Análise e manipulação de dados" },
+          { "ordem": 4, "titulo": "APIs com FastAPI", "descricao": "Criação de REST APIs modernas" },
+          { "ordem": 5, "titulo": "Machine Learning Básico", "descricao": "Scikit-learn e modelos de classificação" }
+        ]
+      },
+      "desafios": {
+        "iniciante": [
+          {
+            "titulo": "FizzBuzz",
+            "descricao": "Imprima números de 1 a 100. Para múltiplos de 3 imprima 'Fizz', de 5 'Buzz', de ambos 'FizzBuzz'.",
+            "exemplo": "1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz ...",
+            "dica": "Verifique a divisibilidade com o operador %."
+          }
+        ],
+        "intermediario": [
+          {
+            "titulo": "Analisador de Palavras",
+            "descricao": "Leia um texto e retorne um dicionário com a frequência de cada palavra, ordenado da mais frequente.",
+            "exemplo": "analisar('o gato e o rato') // => {'o': 2, 'gato': 1, ...}",
+            "dica": "Use collections.Counter ou um dicionário manual."
+          }
+        ],
+        "avancado": [
+          {
+            "titulo": "Servidor HTTP Simples",
+            "descricao": "Crie um servidor HTTP usando apenas a biblioteca padrão do Python que sirva arquivos estáticos.",
+            "exemplo": "python servidor.py 8080",
+            "dica": "Use http.server.BaseHTTPRequestHandler."
+          }
+        ]
+      }
+    },
+    {
+      "id": "react",
+      "nome": "React",
+      "descricao": "Construa interfaces modernas e reativas com a biblioteca mais popular do ecossistema JS.",
+      "niveis": ["iniciante", "intermediario", "avancado"],
+      "modulos": {
+        "iniciante": [
+          { "ordem": 1, "titulo": "Introdução ao React", "descricao": "JSX, componentes funcionais e props" },
+          { "ordem": 2, "titulo": "Estado com useState", "descricao": "Gerenciamento de estado local" },
+          { "ordem": 3, "titulo": "Efeitos com useEffect", "descricao": "Ciclo de vida e efeitos colaterais" },
+          { "ordem": 4, "titulo": "Listas e Chaves", "descricao": "Renderização dinâmica de listas" },
+          { "ordem": 5, "titulo": "Formulários Controlados", "descricao": "Inputs e eventos em React" }
+        ],
+        "intermediario": [
+          { "ordem": 1, "titulo": "Context API", "descricao": "Compartilhamento de estado global" },
+          { "ordem": 2, "titulo": "Hooks Customizados", "descricao": "Criação e reutilização de lógica" },
+          { "ordem": 3, "titulo": "React Router", "descricao": "Roteamento client-side" },
+          { "ordem": 4, "titulo": "Gerenciamento de Estado", "descricao": "Zustand, Redux Toolkit" },
+          { "ordem": 5, "titulo": "Testes com RTL", "descricao": "React Testing Library e boas práticas" }
+        ],
+        "avancado": [
+          { "ordem": 1, "titulo": "Performance", "descricao": "useMemo, useCallback, React.memo" },
+          { "ordem": 2, "titulo": "Server Components", "descricao": "RSC e Next.js App Router" },
+          { "ordem": 3, "titulo": "Animações", "descricao": "Framer Motion e CSS transitions" },
+          { "ordem": 4, "titulo": "Acessibilidade", "descricao": "ARIA, foco e leitores de tela" },
+          { "ordem": 5, "titulo": "Microfrontends", "descricao": "Module Federation e arquitetura distribuída" }
+        ]
+      },
+      "desafios": {
+        "iniciante": [
+          {
+            "titulo": "Contador Interativo",
+            "descricao": "Crie um componente React com um contador que incrementa, decrementa e reseta via botões.",
+            "exemplo": "<Counter /> renderiza [+] [0] [-] [Reset]",
+            "dica": "Use useState para armazenar o valor atual."
+          }
+        ],
+        "intermediario": [
+          {
+            "titulo": "Buscador com Debounce",
+            "descricao": "Crie um campo de busca que consulta uma API somente após 400ms sem digitação.",
+            "exemplo": "<SearchBox /> faz fetch após pausa na digitação",
+            "dica": "Combine useEffect + setTimeout para o debounce."
+          }
+        ],
+        "avancado": [
+          {
+            "titulo": "Gerenciador de Tarefas",
+            "descricao": "Crie um app de tasks com persistência no localStorage, filtros e drag-and-drop.",
+            "exemplo": "Tarefas movíveis entre colunas: A Fazer, Em Andamento, Concluído",
+            "dica": "Use useReducer para gerenciar as transições de estado."
+          }
+        ]
+      }
+    },
+    {
+      "id": "nodejs",
+      "nome": "Node.js",
+      "descricao": "Execute JavaScript no servidor e construa APIs, CLIs e microsserviços.",
+      "niveis": ["iniciante", "intermediario", "avancado"],
+      "modulos": {
+        "iniciante": [
+          { "ordem": 1, "titulo": "Introdução ao Node.js", "descricao": "Ambiente, REPL e módulo fs" },
+          { "ordem": 2, "titulo": "NPM e Pacotes", "descricao": "Gerenciamento de dependências" },
+          { "ordem": 3, "titulo": "HTTP Nativo", "descricao": "Criando servidor com módulo http" },
+          { "ordem": 4, "titulo": "Express Básico", "descricao": "Rotas, middlewares e respostas" },
+          { "ordem": 5, "titulo": "Leitura e Escrita de Arquivos", "descricao": "fs.readFile, writeFile, streams" }
+        ],
+        "intermediario": [
+          { "ordem": 1, "titulo": "REST APIs", "descricao": "CRUD completo com Express e JSON" },
+          { "ordem": 2, "titulo": "Banco de Dados", "descricao": "Conexão com MongoDB e Prisma/PostgreSQL" },
+          { "ordem": 3, "titulo": "Autenticação", "descricao": "JWT, bcrypt e sessões" },
+          { "ordem": 4, "titulo": "Middlewares Avançados", "descricao": "CORS, rate limiting, validação" },
+          { "ordem": 5, "titulo": "Variáveis de Ambiente", "descricao": "dotenv, configuração por ambiente" }
+        ],
+        "avancado": [
+          { "ordem": 1, "titulo": "Arquitetura Limpa", "descricao": "Clean Architecture em projetos Node" },
+          { "ordem": 2, "titulo": "Testes de Integração", "descricao": "Supertest, mocks e test doubles" },
+          { "ordem": 3, "titulo": "WebSockets", "descricao": "Comunicação em tempo real com Socket.io" },
+          { "ordem": 4, "titulo": "Filas e Workers", "descricao": "BullMQ, Redis e processamento assíncrono" },
+          { "ordem": 5, "titulo": "Deploy e CI/CD", "descricao": "Docker, GitHub Actions e produção" }
+        ]
+      },
+      "desafios": {
+        "iniciante": [
+          {
+            "titulo": "API de Tarefas",
+            "descricao": "Construa uma API REST simples com Express que suporte criar, listar e deletar tarefas em memória.",
+            "exemplo": "POST /tasks | GET /tasks | DELETE /tasks/:id",
+            "dica": "Armazene as tarefas em um array global enquanto o servidor estiver rodando."
+          }
+        ],
+        "intermediario": [
+          {
+            "titulo": "Autenticação JWT",
+            "descricao": "Adicione autenticação à sua API: registro, login retorna token JWT, rotas protegidas.",
+            "exemplo": "POST /auth/register | POST /auth/login | GET /me (protegida)",
+            "dica": "Use a biblioteca jsonwebtoken e armazene usuários no banco."
+          }
+        ],
+        "avancado": [
+          {
+            "titulo": "CLI de Gerenciamento",
+            "descricao": "Crie uma CLI com commander.js que gerencie tarefas via terminal com persistência em arquivo JSON.",
+            "exemplo": "node cli.js add 'Estudar Node' | node cli.js list | node cli.js done 1",
+            "dica": "Use process.argv ou commander para parsear os comandos."
+          }
+        ]
+      }
+    }
+  ]
+}
