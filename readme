@@ -1,0 +1,197 @@
+# 🌍 Geo-Explorer
+
+> Explorador de trilhas de aprendizagem com geração de desafios de código e certificados fictícios.
+
+---
+
+## O que é o Geo-Explorer?
+
+O **Geo-Explorer** é uma ferramenta de linha de comando (CLI) construída em Node.js que permite:
+
+- **Consultar trilhas de aprendizagem** organizadas por tecnologia e nível
+- **Receber desafios de código** sorteados de acordo com a trilha e nível escolhidos
+- **Gerar certificados fictícios** (em HTML) ao concluir uma trilha
+
+O projeto também expõe um **servidor MCP** (*Model Context Protocol*), permitindo que ferramentas de IA como o IBM Bob utilizem os recursos do Geo-Explorer diretamente.
+
+---
+
+## Estrutura do Projeto
+
+```
+geo-explorer/
+├── commands/
+│   ├── trilha.js       # Comando de trilha
+│   ├── desafio.js      # Comando de desafio
+│   └── certificado.js  # Comando de certificado
+├── data/
+│   └── trilhas.json    # Base de dados das trilhas
+├── mcp/
+│   └── server.js       # Servidor MCP
+├── certificates/       # Certificados gerados (criado automaticamente)
+├── tests/
+│   └── index.test.js   # Testes automatizados
+├── docs/
+│   └── mcp.md          # Documentação do servidor MCP
+├── package.json
+└── README.md
+```
+
+---
+
+## Pré-requisitos
+
+- [Node.js](https://nodejs.org) v18 ou superior
+- npm (incluído com o Node.js)
+
+---
+
+## Como executar o projeto
+
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/<seu-usuario>/geo-explorer.git
+cd geo-explorer
+```
+
+### 2. Instale as dependências
+
+> As dependências são necessárias apenas para o servidor MCP.
+
+```bash
+npm install
+```
+
+---
+
+## Como usar os comandos
+
+### `trilha` — Plano de estudos
+
+Exibe os módulos de uma trilha de aprendizagem.
+
+```bash
+# Listar todas as trilhas disponíveis
+node commands/trilha.js
+
+# Ver trilha de uma tecnologia
+node commands/trilha.js javascript
+node commands/trilha.js python intermediario
+node commands/trilha.js react avancado
+```
+
+**Tecnologias disponíveis:** `javascript` · `python` · `react` · `nodejs`
+
+**Níveis:** `iniciante` · `intermediario` · `avancado`
+
+---
+
+### `desafio` — Desafio de código
+
+Sorteia um desafio de código para a tecnologia e nível informados.
+
+```bash
+node commands/desafio.js javascript
+node commands/desafio.js nodejs intermediario
+node commands/desafio.js python avancado
+```
+
+---
+
+### `certificado` — Certificado fictício
+
+Gera um certificado em HTML e salva em `certificates/`.
+
+```bash
+node commands/certificado.js javascript "Maria Silva"
+node commands/certificado.js react "João Souza" intermediario
+node commands/certificado.js nodejs "Ana Lima" avancado
+```
+
+Abra o arquivo `.html` gerado na pasta `certificates/` em qualquer navegador.
+
+---
+
+## Servidor MCP
+
+O Geo-Explorer pode ser integrado ao **IBM Bob** (ou outro cliente MCP) através do servidor MCP incluso.
+
+### Iniciar o servidor manualmente
+
+```bash
+node mcp/server.js
+```
+
+### Configurar no IBM Bob
+
+Adicione ao seu arquivo de configuração do Bob:
+
+```json
+{
+  "mcpServers": {
+    "geo-explorer": {
+      "command": "node",
+      "args": ["/caminho/absoluto/para/geo-explorer/mcp/server.js"]
+    }
+  }
+}
+```
+
+### Ferramentas expostas pelo MCP
+
+| Ferramenta   | Parâmetros                              | Descrição                         |
+|-------------|------------------------------------------|-----------------------------------|
+| `trilha`    | `tecnologia`, `nivel` (opcional)        | Retorna plano de estudos          |
+| `desafio`   | `tecnologia`, `nivel` (opcional)        | Retorna desafio de código         |
+| `certificado` | `tecnologia`, `usuario`, `nivel`     | Gera certificado HTML             |
+
+Consulte [`docs/mcp.md`](docs/mcp.md) para detalhes completos.
+
+---
+
+## Como executar os testes
+
+Os testes utilizam apenas a biblioteca padrão do Node.js (`assert`), sem dependências externas.
+
+```bash
+node tests/index.test.js
+```
+
+**O que é testado:**
+
+- ✅ Existência e validade do arquivo `trilhas.json`
+- ✅ Presença de campos obrigatórios em cada trilha
+- ✅ Presença de módulos para os três níveis
+- ✅ Busca de trilhas por ID (existente e inexistente)
+- ✅ Normalização de busca (case-insensitive)
+- ✅ Campos obrigatórios em cada desafio
+- ✅ Lógica de sorteio de desafio
+- ✅ Criação do diretório de certificados
+- ✅ Geração e conteúdo do HTML do certificado
+
+---
+
+## Melhorias realizadas
+
+- **Certificado visual**: Geração de um certificado HTML estilizado com borda dupla, campo de assinatura e ID único.
+- **MCP Server**: Servidor MCP completo com as três ferramentas (`trilha`, `desafio`, `certificado`) usando o SDK oficial `@modelcontextprotocol/sdk`.
+- **Base de trilhas rica**: Quatro trilhas (JavaScript, Python, React, Node.js) com 5 módulos e múltiplos desafios por nível.
+- **Testes sem dependências**: Suite de testes com Node.js puro, sem precisar instalar frameworks externos.
+- **Feedback ao usuário**: Mensagens de erro claras e sugestões de próximo passo em cada comando.
+
+---
+
+## O que aprendi
+
+- Como estruturar um projeto CLI em Node.js com múltiplos comandos
+- Como implementar um servidor MCP com o SDK oficial do protocolo
+- Como gerar arquivos HTML dinamicamente via Node.js
+- Como escrever testes automatizados usando apenas `assert` nativo
+- Como organizar uma base de dados local em JSON para um projeto de portfólio
+
+---
+
+## Licença
+
+MIT — sinta-se livre para usar, modificar e distribuir.
